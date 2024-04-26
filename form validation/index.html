@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Form validation</title>
+</head>
+<body>
+    <div class="main">
+       <div class="h1"> <h2>Login To Coding Market</h2></div>
+        <div class="main1">
+            <span>Username</span>
+            <br><input type="text" placeholder="  Username" id="username">
+            
+        </div>
+        <div class="main2">
+            <span>Password</span>
+           <br> <input type="text" id="password" placeholder="  Password">
+            
+            
+        </div>
+        <br><div id="validation"></div>
+        <button id="login-button" onclick="charCheck()">Login</button>
+    </div>
+
+    <script>
+        var input1=document.getElementById("username")
+        var input2=document.getElementById("password")
+       
+        
+        
+        function charCheck(){
+            var input11=input1.value
+            var input12=input2.value
+            if(input11.length<=4 && input12.length>=6 && input12.length<=12  ){
+                document.getElementById("validation").innerHTML="Succesfully Logged In"
+                document.getElementById("validation").style.color="green"
+            }
+            else if( input11.indexOf(' ') >= 0 && input12.indexOf(' ')>=0){
+                document.getElementById("validation").innerHTML="Incorrect username or password"
+                document.getElementById("validation").style.color="red"
+            }
+            else{
+                document.getElementById("validation").innerHTML="Incorrect username or password"
+                document.getElementById("validation").style.color="red"
+            }
+            
+            // document.getElementById("div2").innerHTML=input1.value
+            // document.getElementById("div3").innerHTML=input2.value
+        } 
+    </script>
+</body>
+</html>
